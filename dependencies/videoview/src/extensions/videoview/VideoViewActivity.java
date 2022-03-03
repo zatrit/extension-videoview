@@ -51,7 +51,7 @@ public class VideoViewActivity extends Activity {
     
     protected void initUI()
 	{
-	    setContentView(R.layout.activity_main);
+	    setContentView(R.layout.videoview_activity);
 	    
         videoView = (VideoView) findViewById(R.id.VideoView);
         videoView.setVideoURI(Uri.fromFile(new File(videoPath)));
