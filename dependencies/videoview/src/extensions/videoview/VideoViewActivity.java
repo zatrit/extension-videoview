@@ -53,7 +53,7 @@ public class VideoViewActivity extends Activity {
 	{
 	    setContentView(R.layout.videoview_activity);
 	    
-        videoView = (VideoView) findViewById(R.id.VideoView);
+        videoView = (VideoView) findViewById(R.id.simpleVideoView);
         videoView.setVideoURI(Uri.fromFile(new File(videoPath)));
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
