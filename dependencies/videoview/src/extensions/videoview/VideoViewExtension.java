@@ -14,7 +14,7 @@ public class VideoViewExtension extends Extension {
 
 	public static void open(String videoPath) {
 		try {
-			Intent intent = new Intent(mainActivity, WebViewActivity.class);
+			Intent intent = new Intent(mainActivity, VideoViewActivity.class);
 			intent.putExtra(EXTRA_VIDEOPATH, videoPath);
 			mainActivity.startActivity(intent);
 			active = true;
