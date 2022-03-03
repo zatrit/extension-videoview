@@ -1,4 +1,4 @@
-package extension.webview;
+package extension.videoview;
 
 #if android
 import lime.system.JNI;
