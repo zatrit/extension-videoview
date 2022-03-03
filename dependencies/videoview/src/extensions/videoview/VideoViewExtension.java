@@ -19,7 +19,7 @@ public class VideoViewExtension extends Extension {
 			mainActivity.startActivity(intent);
 			active = true;
 
-		} catch (JSONException e) {
+		} catch (Exception e) {
 			Log.d("VideoViewExtension", e.toString());
 		}
 	}
