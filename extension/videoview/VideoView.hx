@@ -9,13 +9,13 @@ class VideoView
 	public static var onError:Void -> Void = null;
 	public static var onCompletion:Void -> Void = null;
 
-	public static function playVideo(url:String = null, ?urlWhitelist:Array<String>, ?urlBlacklist:Array<String>, ?hideui:Bool = true, ?useWideViewPort:Bool = false):Void 
-    {
-        #if android
+	public static function playVideo(path:String = null):Void 
+        {
+                #if android
 		_callbackFunc(new CallBack());
-		_playVideo(Json.stringify(obj));
-        #end
-    }
+		_playVideo(path);
+                #end
+        }
     
 	#if android
 	private static var _playVideo = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "playVideo", "(Ljava/lang/String;)V");
