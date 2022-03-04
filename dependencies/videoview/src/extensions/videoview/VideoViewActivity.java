@@ -21,7 +21,7 @@ public class VideoViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         
 	Bundle extras = getIntent().getExtras();
-	videoPath = extras.getString(VideoViewExtension.EXTRA_VIDEOPATH, "null");
+	videoPath = extras.getString(VideoViewExtension.EXTRA_VIDEOPATH);
 	callback = VideoViewExtension.callback;
 
 	if(android.os.Build.VERSION.SDK_INT >= 19 ) 
