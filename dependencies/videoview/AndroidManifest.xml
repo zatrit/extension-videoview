@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="extensions.videoview">
  <application android:hardwareAccelerated="true">
   <activity
-   android:name="extensions.videoview.WebViewActivity"
+   android:name="extensions.videoview.VideoViewActivity"
    android:theme="@style/FloatingActivityTheme"
    android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
  </application>
