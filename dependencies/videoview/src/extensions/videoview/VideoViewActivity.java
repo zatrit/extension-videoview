@@ -84,6 +84,7 @@ public class VideoViewActivity extends Activity {
     @Override
     public void finish(){
 	super.finish();
+        videoView.stopPlayback();
 	VideoViewExtension.active = false;
     }
 }
