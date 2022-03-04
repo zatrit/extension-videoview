@@ -7,7 +7,7 @@ import org.haxe.lime.HaxeObject;
 
 public class VideoViewExtension extends Extension {
 
-	public static final String EXTRA_VIDEOPATH = "extensions.webviewex.EXTRA_URL";
+	public static final String EXTRA_VIDEOPATH = null;
 	public static boolean active = false;
 
 	public static HaxeObject callback;
@@ -18,7 +18,6 @@ public class VideoViewExtension extends Extension {
 			intent.putExtra(EXTRA_VIDEOPATH, videoPath);
 			mainActivity.startActivity(intent);
 			active = true;
-
 		} catch (Exception e) {
 			Log.d("VideoViewExtension", e.toString());
 		}
