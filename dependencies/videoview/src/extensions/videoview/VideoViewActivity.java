@@ -20,11 +20,11 @@ public class VideoViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-		Bundle extras = getIntent().getExtras();
-		videoPath = extras.getString(VideoViewExtension.EXTRA_VIDEOPATH, "null");
-		callback = VideoViewExtension.callback;
+	Bundle extras = getIntent().getExtras();
+	videoPath = extras.getString(VideoViewExtension.EXTRA_VIDEOPATH, "null");
+	callback = VideoViewExtension.callback;
 
-	    if(android.os.Build.VERSION.SDK_INT >= 19 ) 
+	if(android.os.Build.VERSION.SDK_INT >= 19 ) 
         {
 	        getWindow().getDecorView().setSystemUiVisibility(
 				View.SYSTEM_UI_FLAG_FULLSCREEN |
@@ -34,7 +34,7 @@ public class VideoViewActivity extends Activity {
 				View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
 				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 	        );
-	    }
+	}
         else if(android.os.Build.VERSION.SDK_INT >= 16 ) 
         {
             getWindow().getDecorView().setSystemUiVisibility(
@@ -44,14 +44,14 @@ public class VideoViewActivity extends Activity {
 				View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
 				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 		    );
-	    }
+	}
 	                  
         initUI();
     }
     
     protected void initUI()
-	{
-	    setContentView(R.layout.videoview_activity);
+    {
+	setContentView(R.layout.videoview_activity);
 	    
         videoView = (VideoView) findViewById(R.id.simpleVideoView);
         videoView.setVideoURI(Uri.fromFile(new File(videoPath)));
@@ -69,20 +69,21 @@ public class VideoViewActivity extends Activity {
                 //a callback and something to remove it
                 callback.call("onError", new Object[] {});
                 finish();
+                return false;//idk why is need this
             }
         });        
         videoView.start();
-	}
+    }
 	
-	@Override
-	public void onBackPressed() {
-	    callback.call("onCompletion", new Object[] {});
-	    finish();
-	}
+    @Override
+    public void onBackPressed() {
+	callback.call("onCompletion", new Object[] {});
+	finish();
+    }
 	
-	@Override
-	public void finish(){
-		super.finish();
-		VideoViewExtension.active = false;
-	}
+    @Override
+    public void finish(){
+	super.finish();
+	VideoViewExtension.active = false;
+    }
 }
