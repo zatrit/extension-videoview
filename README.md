@@ -4,9 +4,9 @@ Native Video Support For Android in Haxe Flixel
 ## Credits:
 * Saw (M.A. JIGSAW) me - doing the hole code for the extension
 
-If You want to use it credit me, thank you
+## If You want to use it credit me, thank you
 
-A code Exemple to be able to use it
+## A code Exemple to be able to use it
 
 ```haxe
 #if android
