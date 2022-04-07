@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="extensions.videoview">
+<!--Add this before application tag in AndroidManifest.xml-->
+<uses-permission android:name="android.permission.INTERNET" />
  <application android:hardwareAccelerated="true">
   <activity
    android:name="extensions.videoview.VideoViewActivity"
