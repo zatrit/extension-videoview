@@ -13,7 +13,6 @@ Native Video Support For Android in Haxe Flixel
 import extension.videoview.VideoView;
 #end
 import flixel.FlxBasic;
-import flixel.FlxG;
 
 class VideoPlayer extends FlxBasic {
 	public var finishCallback:Void->Void = null;
