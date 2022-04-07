@@ -1,5 +1,5 @@
 # Extension-Videoview
-Native Video Support For Android in Haxe Flixel 
+Native Video Support For Android in Haxe Flixel using Java VideoView
 
 ## Credits:
 * Saw (M.A. JIGSAW) me - doing the hole code for the extension
