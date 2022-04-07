@@ -24,26 +24,13 @@ public class VideoViewActivity extends Activity {
 	videoPath = extras.getString(VideoViewExtension.EXTRA_VIDEOPATH);
 	callback = VideoViewExtension.callback;
 
-	if(android.os.Build.VERSION.SDK_INT >= 19 ) 
-        {
-	        getWindow().getDecorView().setSystemUiVisibility(
-				View.SYSTEM_UI_FLAG_FULLSCREEN |
-				View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-				View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
-				View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-				View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-	        );
+	if(android.os.Build.VERSION.SDK_INT >= 19) 
+	{
+		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 	}
-        else if(android.os.Build.VERSION.SDK_INT >= 16 ) 
-        {
-            getWindow().getDecorView().setSystemUiVisibility(
-				View.SYSTEM_UI_FLAG_FULLSCREEN |
-				View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-				View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-				View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-		    );
+	else if(android.os.Build.VERSION.SDK_INT >= 16) 
+	{
+		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 	}
 	                  
         initUI();
@@ -52,9 +39,10 @@ public class VideoViewActivity extends Activity {
     protected void initUI()
     {
 	setContentView(R.layout.videoview_activity);
-	    
+
+        Uri uri = Uri.parse(videoPath);
         videoView = (VideoView) findViewById(R.id.simpleVideoView);
-        videoView.setVideoURI(Uri.fromFile(new File(videoPath)));
+        videoView.setVideoURI(uri);
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
