@@ -4,7 +4,7 @@
   android:layout_height="fill_parent"
   android:background="@android:color/background_dark">
 
-    <FrameLayout
+    <VideoView
         android:id="@+id/simpleVideoView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
