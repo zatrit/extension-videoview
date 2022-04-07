@@ -7,7 +7,7 @@ import org.haxe.lime.HaxeObject;
 
 public class VideoViewExtension extends Extension {
 
-	public static final String EXTRA_VIDEOPATH = null;
+	public static final String EXTRA_VIDEOPATH = "";
 	public static boolean active = false;
 
 	public static HaxeObject callback;
