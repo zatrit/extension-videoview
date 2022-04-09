@@ -23,6 +23,30 @@ public class VideoViewExtension extends Extension {
 		}
 	}
 
+	public static void pauseVideo() {
+		try {
+			VideoViewActivity.videoView.pause();
+		} catch (Exception e) {
+			Log.d("VideoViewExtension", e.toString());
+		}
+	}
+
+	public static void resumeVideo() {
+		try {
+			VideoViewActivity.videoView.resume();
+		} catch (Exception e) {
+			Log.d("VideoViewExtension", e.toString());
+		}
+	}
+
+	public static void seekVideoTo(int msec) {
+		try {
+			VideoViewActivity.videoView.seekTo(msec);
+		} catch (Exception e) {
+			Log.d("VideoViewExtension", e.toString());
+		}
+	}
+
 	public static boolean isActive() {
 		return active;
 	}
