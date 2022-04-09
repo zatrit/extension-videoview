@@ -41,10 +41,15 @@ public class VideoViewActivity extends Activity {
         Uri uri = Uri.parse(videoPath);
         videoView = (VideoView) findViewById(R.id.simpleVideoView);
         videoView.setVideoURI(uri);
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) { 
+                callback.call("onPrepared", new Object[] {});
+            }
+        });
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void onCompletion(MediaPlayer mp) {
-                //a callback and something to remove 
+            public void onCompletion(MediaPlayer mp) { 
                 callback.call("onCompletion", new Object[] {});
                 finish();
             }
@@ -52,10 +57,9 @@ public class VideoViewActivity extends Activity {
         videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
             @Override
             public boolean onError(MediaPlayer mp, int what, int extra) {
-                //a callback and something to remove it
                 callback.call("onError", new Object[] {});
                 finish();
-                return false;//idk why is need this
+                return false;
             }
         });        
         videoView.start();
