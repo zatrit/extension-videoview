@@ -3,13 +3,11 @@ package extensions.videoview;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.VideoView;
-import android.widget.FrameLayout;
-import org.haxe.lime.HaxeObject;
 import android.view.View;
-import java.io.File;
+import android.widget.VideoView;
+import org.haxe.lime.HaxeObject;
 
 public class VideoViewActivity extends Activity {
     public static VideoView videoView;
