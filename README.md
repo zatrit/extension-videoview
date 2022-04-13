@@ -2,7 +2,7 @@
 Native Video Support For Android in Haxe Flixel using Java VideoView
 
 ## Credits:
-* Saw (M.A. JIGSAW) me - doing the hole code for the extension
+- <a href = "https://github.com/jigsaw-4277821">Saw (M.A. Jigsaw) me! </a>  - doing the hole code for the extension
 
 ## If You want to use it credit me, thank you
 
