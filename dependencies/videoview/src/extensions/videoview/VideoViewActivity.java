@@ -68,14 +68,6 @@ public class VideoViewActivity extends Activity {
 		videoView.start();
 	}
 
-	public void onPause() {
-		videoView.pause();
-	}
-
-	public void onResume() {
-		videoView.resume();
-	}
-
 	@Override
 	public void onBackPressed() {
 		callback.call("onCompletion", new Object[] {});
