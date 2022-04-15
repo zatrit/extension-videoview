@@ -48,8 +48,8 @@ public class VideoViewActivity extends Activity {
 	@Override
 	protected void onStart() {
 		try {
+			Uri uri = Uri.parse(videoPath);
 			videoView.setVideoURI(uri);
-
 			videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 				@Override
 				public void onCompletion(MediaPlayer mp) { 
