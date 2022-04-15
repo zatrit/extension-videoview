@@ -6,7 +6,7 @@ import org.haxe.extension.Extension;
 import org.haxe.lime.HaxeObject;
 
 /**
-* author: Saw (M.A. Jigsaw)
+ * author: Saw (M.A. Jigsaw)
  */
 
 public class VideoViewExtension extends Extension {
