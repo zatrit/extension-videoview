@@ -41,9 +41,25 @@ public class VideoViewActivity extends Activity {
 	}
 
 	@Override
+	protected void onResume(){
+		super.onResume();
+		if (videoView != null) {
+			videoView.resume();
+		}
+	}
+
+	@Override
+	protected void onPause(){
+		super.onPause();
+		if (videoView != null && videoView.isPlaying()) {
+			videoView.pause();
+		}
+	}
+
+	@Override
 	protected void onDestroy(){
 		super.onDestroy();
-		videoView.start();
+		videoView.stopPlayback();
 	}
 
 	@Override
