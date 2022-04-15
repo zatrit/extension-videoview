@@ -59,7 +59,9 @@ public class VideoViewActivity extends Activity {
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
-		videoView.stopPlayback();
+		if (videoView != null) {
+			videoView.stopPlayback();
+		}
 	}
 
 	@Override
@@ -94,7 +96,9 @@ public class VideoViewActivity extends Activity {
 	@Override
 	protected void onStop(){
 		super.onStop();
-		videoView.stopPlayback();
+		if (videoView != null) {
+			videoView.stopPlayback();
+		}
 	}
 
 	@Override
@@ -106,6 +110,8 @@ public class VideoViewActivity extends Activity {
 	@Override
 	public void finish(){
 		super.finish();
-		videoView.stopPlayback();
+		if (videoView != null) {
+			videoView.stopPlayback();
+		}
 	}
 }
