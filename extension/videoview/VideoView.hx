@@ -3,6 +3,10 @@ package extension.videoview;
 #if android
 import lime.system.JNI;
 #end
+
+/**
+ * author: Saw (M.A. Jigsaw)
+ */
 	
 class VideoView  
 {
