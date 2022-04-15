@@ -115,7 +115,7 @@ public class VideoViewActivity extends Activity {
 	}
 
 	@Override
-	protected void onBackPressed() {
+	public void onBackPressed() {
 		try {
 			callback.call("onCompletion", new Object[] {});
 			finish();
@@ -125,7 +125,7 @@ public class VideoViewActivity extends Activity {
 	}
 
 	@Override
-	protected void finish(){
+	public void finish(){
 		super.finish();
 		try {
 			videoView.stopPlayback();
