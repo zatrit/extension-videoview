@@ -33,6 +33,5 @@ class VideoPlayer extends FlxBasic {
 ```
 
 ## just a little good thing you need to know this extension can run videos from the web browser too :)
-Look in the source code for more Functions
 
 ## TODO: more Functions for the videoview extension
