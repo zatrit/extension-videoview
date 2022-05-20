@@ -10,7 +10,6 @@ import lime.system.JNI;
 	
 class VideoView  
 {
-	public static var onError:Void -> Void = null;
 	public static var onCompletion:Void -> Void = null;
 	public static var onPrepared:Void -> Void = null;
 
@@ -31,12 +30,6 @@ class VideoView
 class CallBack {
 	public function new() {
 
-	}
-
-	public function onError() {
-		if (VideoView.onError != null) {
-			VideoView.onError();
-		}
 	}
 
 	public function onCompletion() {      
