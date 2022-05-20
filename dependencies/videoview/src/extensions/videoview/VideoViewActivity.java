@@ -76,14 +76,6 @@ public class VideoViewActivity extends Activity {
 				finish();
 			}
 		});
-		videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
-			@Override
-			public boolean onError(MediaPlayer mp, int what, int extra) {
-				callback.call("onError", new Object[] {});
-				finish();
-				return false;
-			}
-		});
 		videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 			@Override
 			public void onPrepared(MediaPlayer mp) { 
