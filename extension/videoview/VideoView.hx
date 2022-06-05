@@ -8,23 +8,21 @@ import lime.system.JNI;
  * author: Saw (M.A. Jigsaw)
  */
 	
-class VideoView  
+class VideoView
 {
 	public static var onCompletion:Void -> Void = null;
 	public static var onPrepared:Void -> Void = null;
 
 	public static function playVideo(path:String = null):Void 
-        {
-                #if android
+	{
+		#if android
+		var _callbackFunc = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "setCallback", "(Lorg/haxe/lime/HaxeObject;)V");
+		var _playVideo = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "playVideo", "(Ljava/lang/String;)V");
+
 		_callbackFunc(new CallBack());
 		_playVideo(path);
-                #end
-        }
-    
-	#if android
-	private static var _playVideo = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "playVideo", "(Ljava/lang/String;)V");
-	private static var _callbackFunc = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "setCallback", "(Lorg/haxe/lime/HaxeObject;)V");
-	#end
+		#end
+	}
 }
 
 class CallBack {
@@ -32,15 +30,15 @@ class CallBack {
 
 	}
 
-	public function onCompletion() {      
+	public function onCompletion() {
 		if (VideoView.onCompletion != null) {
 			VideoView.onCompletion();
-		}        
+		}
 	}
 
-	public function onPrepared() {      
+	public function onPrepared() {
 		if (VideoView.onPrepared != null) {
 			VideoView.onPrepared();
-		}        
+		}
 	}
 }
